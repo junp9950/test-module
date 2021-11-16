@@ -1,0 +1,5 @@
+resource "aws_lb_target_group_attachment" "jwshin_tgatt" {
+  target_group_arn = aws_lb_target_group.jwshin_albtg.arn
+  target_id        = aws_instance.jwshin_weba.id
+  port             = 80
+}

@@ -1,0 +1,7 @@
+resource "aws_internet_gateway" "jwshin_ig" {
+  vpc_id = aws_vpc.jwshin_vpc.id
+
+  tags = {
+    "Name" = "jwshin-ig"
+  }
+}

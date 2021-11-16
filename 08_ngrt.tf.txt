@@ -1,0 +1,11 @@
+resource "aws_route_table" "jwshin_ngrt" {
+  vpc_id = aws_vpc.jwshin_vpc.id
+
+  route {
+    cidr_block = "0.0.0.0/0"
+    gateway_id = aws_nat_gateway.jwshin_ng.id
+  }
+  tags = {
+    "Name" = "jwshin-ngrt"
+  }
+}

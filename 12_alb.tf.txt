@@ -1,0 +1,14 @@
+resource "aws_lb" "jwshin_alb" {
+  name               = "jwshin-alb"
+  internal           = false
+  load_balancer_type = "application"
+  security_groups    = [aws_security_group.jwshin_sg.id]
+  subnets            = [aws_subnet.jwshin_puba.id, aws_subnet.jwshin_pubc.id]
+
+  tags = {
+    "Name" = "jwshin-alb"
+  }
+}
+output "alb_dns" {
+    value = aws_lb.jwshin_alb.dns_name  
+}

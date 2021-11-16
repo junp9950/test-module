@@ -1,0 +1,59 @@
+# 가용영역 a의 Public Subnet
+resource "aws_subnet" "jwshin_puba" {
+  vpc_id            = aws_vpc.jwshin_vpc.id
+  cidr_block        = "10.0.0.0/24"
+  availability_zone = "ap-northeast-2a"
+  tags = {
+    "Name" = "jwshin-puba"
+  }
+}
+
+# 가용영역 a의 Private Subnet
+resource "aws_subnet" "jwshin_pria" {
+  vpc_id            = aws_vpc.jwshin_vpc.id
+  cidr_block        = "10.0.1.0/24"
+  availability_zone = "ap-northeast-2a"
+  tags = {
+    "Name" = "jwshin-pria"
+  }
+}
+
+# 가용영역 c의 Public Subnet
+resource "aws_subnet" "jwshin_pubc" {
+  vpc_id            = aws_vpc.jwshin_vpc.id
+  cidr_block        = "10.0.2.0/24"
+  availability_zone = "ap-northeast-2c"
+  tags = {
+    "Name" = "jwshin-pubc"
+  }
+}
+
+# 가용영역 c의 Private Subnet
+resource "aws_subnet" "jwshin_pric" {
+  vpc_id            = aws_vpc.jwshin_vpc.id
+  cidr_block        = "10.0.3.0/24"
+  availability_zone = "ap-northeast-2c"
+  tags = {
+    "Name" = "jwshin-pric"
+  }
+}
+
+# 가용영역 a의 Private DB Subnet
+resource "aws_subnet" "jwshin_pridba" {
+  vpc_id            = aws_vpc.jwshin_vpc.id
+  cidr_block        = "10.0.4.0/24"
+  availability_zone = "ap-northeast-2a"
+  tags = {
+    "Name" = "jwshin-pridba"
+  }
+}
+
+# 가용영역 c의 Private DB Subnet
+resource "aws_subnet" "jwshin_pridbc" {
+  vpc_id            = aws_vpc.jwshin_vpc.id
+  cidr_block        = "10.0.5.0/24"
+  availability_zone = "ap-northeast-2c"
+  tags = {
+    "Name" = "jwshin-pridbc"
+  }
+}

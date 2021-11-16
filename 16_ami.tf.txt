@@ -1,0 +1,9 @@
+resource "aws_ami_from_instance" "jwshin_ami" {
+  name               = "jwshin-aws-ami"
+  source_instance_id = aws_instance.jwshin_weba.id
+
+  depends_on = [
+    aws_instance.jwshin_weba
+  ]
+
+}

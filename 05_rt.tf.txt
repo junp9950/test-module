@@ -1,0 +1,12 @@
+
+resource "aws_route_table" "jwshin_rf" {
+  vpc_id = aws_vpc.jwshin_vpc.id
+
+  route {
+    cidr_block = "0.0.0.0/0"
+    gateway_id = aws_internet_gateway.jwshin_ig.id
+  }
+  tags = {
+    "Name" = "jwshin-rt"
+  }
+}
